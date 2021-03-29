@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Cardo:ital@0;1&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        
+        <meta name="description" content=""> <!-- ключеное описание google-->
+        <meta name="keywords" content=""> <!-- ключеное описание Yandex-->
+        
+        
+        <title>Portfolio-1</title>
+        <meta name="viewport" content="width=device-width", initial-scale=1><!-- даный мета тег используеться для работы с мобильными устройствами, планшетами и тд. ширина порта будет равна ширине экрана девайса. initial-scale=1 можем делать 
+        зум-->
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+<!--    Sprite-->
+   <svg style ="display: none;">
+       <symbol id="facebook" viewBox="0 0 430.113 430.114">
+           <g>
+            <path d="M158.081,83.3c0,10.839,0,59.218,0,59.218h-43.385v72.412h43.385v215.183h89.122V214.936h59.805
+            c0,0,5.601-34.721,8.316-72.685c-7.784,0-67.784,0-67.784,0s0-42.127,0-49.511c0-7.4,9.717-17.354,19.321-17.354
+            c9.586,0,29.818,0,48.557,0c0-9.859,0-43.924,0-75.385c-25.016,0-53.476,0-66.021,0C155.878-0.004,158.081,72.48,158.081,83.3z"/>
+            </g>
+       </symbol>
+       <symbol id ="twitter" viewBox="0 -46 511.99914 511">
+           <g>
+               <path d="m350.886719 10.496094c28.703125 0 54.59375 12.03125 72.910156 31.320312v-.003906c7.316406-.390625 39.859375-6.832031 65.316406-24.714844 0 0-1.289062 26.742188-42.371093 55.738282 0 0 25.613281-1.929688 55.257812-14.980469-10.90625 19.996093-31.765625 40.933593-50.585938 53.167969 0 239.984374-249.683593 376.648437-441.414062 250.667968 91.183594 8.539063 147.890625-40.597656 147.890625-40.597656-75.878906-2.578125-93.921875-69.59375-93.921875-69.59375 24.003906 2.578125 45.109375-2.417969 45.109375-2.417969-86.191406-21.101562-79.90625-99.234375-79.90625-99.234375 20.78125 12.886719 43.980469 12.402344 43.980469 12.402344-75.714844-58.960938-29.964844-133.390625-29.964844-133.390625 44.558594 53.15625 136.445312 112.203125 209.574219 104.078125-1.566407-7.054688-2.398438-14.386719-2.398438-21.914062 0-55.519532 45.003907-100.527344 100.523438-100.527344zm0 0" />
+           </g>
+       </symbol>
+       <symbol id="linkedin" viewBox="0 0 512 512">
+           <g>
+               <path d="m475.074219 0h-438.148438c-20.394531 0-36.925781 16.53125-36.925781 36.925781v438.148438c0 20.394531 16.53125 36.925781 36.925781 36.925781h438.148438c20.394531 0 36.925781-16.53125 36.925781-36.925781v-438.148438c0-20.394531-16.53125-36.925781-36.925781-36.925781zm-293.464844 387h-62.347656v-187.574219h62.347656zm-31.171875-213.1875h-.40625c-20.921875 0-34.453125-14.402344-34.453125-32.402344 0-18.40625 13.945313-32.410156 35.273437-32.410156 21.328126 0 34.453126 14.003906 34.859376 32.410156 0 18-13.53125 32.402344-35.273438 32.402344zm255.984375 213.1875h-62.339844v-100.347656c0-25.21875-9.027343-42.417969-31.585937-42.417969-17.222656 0-27.480469 11.601563-31.988282 22.800781-1.648437 4.007813-2.050781 9.609375-2.050781 15.214844v104.75h-62.34375s.816407-169.976562 0-187.574219h62.34375v26.558594c8.285157-12.78125 23.109375-30.960937 56.1875-30.960937 41.019531 0 71.777344 26.808593 71.777344 84.421874zm0 0"/>
+           </g>
+       </symbol>
+   </svg>
+    
+<!-- header =======================-->
+        <header class="header" id="header">
+           <div class="container">
+               <div class="header__inner">
+                   <div class="header__logo">
+                      <img src="img/activebox-logo2.png" alt="">
+                   </div>
+                   <nav class="nav" id="nav">
+                       <a class="nav__link" href="#" data-scroll="#features">Вид Деятельности</a>
+                       <a class="nav__link" href="#" data-scroll="#works">Работа</a>
+                       <a class="nav__link" href="#" data-scroll="#team">Наша команда</a>
+                       <a class="nav__link" href="#" data-scroll="#reviews">Галерея</a>
+                       <a class="nav__link" href="#" data-scroll="#download">Загрузки</a>
+                   </nav>
+                   <button class="burger" type="button" id="navToggle">
+                       <span class="burger__item">Menu</span>
+                   </button>
+               
+               </div>
+            </div>
+        </header>
+        
+<!-- intro ========== -->
+    <div class="intro" id="intro">
+         <div class="container">
+                 <div class="intro__inner"> 
+                 <h1 class="intro__title"> Мои идеи</h1>
+                 <h2 class="intro__subtitle"> <p>Это первая страница сайта, написаная мной. Тут я опишу половину проделанного пути, по верстке такой страницы. с данный момент тут будет находиться просто текст с непонятным смыслом, и в тоже время наполнен. <br>Суть данного мероприятия, не дать какую то информативную чать, а просто заполнить пространнство данной страницы. <br> Надеюсь что в скором времени тут будет что-то болеее информативное, так как уже и не имею понятия что сдесь еще писать.</p></h2>
+                <a class="btn btn--red" href="https://www.google.com/search?q=%D1%87%D0%BF%D1%83&rlz=1C1OKWM_enUA890UA890&tbm=isch&sxsrf=ALeKk02yVsX4Y5AD_jP2uaqygyG_olH27g:1612552554891&source=lnms&sa=X&ved=0ahUKEwiTytyxutPuAhVRQUEAHZqhAeIQ_AUIDCgC&biw=1920&bih=880&dpr=1" target="_blank">Поиск Интерестного ЧПУ</a>
+                <a class="btn2 btn--red" href="https://htmlbase.ru/html/a" target="_blank">База HTML</a>
+                
+                </div>                
+         </div>
+    </div>
+       
+<!-- Features===================== -->
+         <div class="container" id="features">
+                <div class="features">
+                   <div class="features__item">
+                     <img class="features__icon" src="img/features/feature-1.png" alt="">
+                     <h4 class="features__title">Легко настраивается</h4>   
+                     <div class="feature__text">Легко настраивается. И тут будет описание данного блока</div>
+                   </div>
+                    <div class="features__item">
+                     <img class="features__icon" src="img/features/feature-2.png" alt="">
+                     <h4 class="features__title">Отзывы о нас</h4>   
+                     <div class="feature__text">Легко настраивается. И тут будет описание данного блока</div>
+                   </div>
+                   <div class="features__item">
+                     <img class="features__icon" src="img/features/feature-3.png" alt="">
+                     <h4 class="features__title">Модный Дизайн</h4>   
+                     <div class="feature__text">Легко настраивается. И тут будет описание данного блока</div>
+                   </div>
+                    <div class="features__item">
+                     <img class="features__icon" src="img/features/feature-4.png" alt="">
+                     <h4 class="features__title">Чистый код</h4>   
+                     <div class="feature__text">Легко настраивается. И тут будет описание данного блока</div>
+                   </div>
+                    <div class="features__item">
+                     <img class="features__icon" src="img/features/feature-5.png" alt="">
+                     <h4 class="features__title">Готово к отправке</h4>   
+                     <div class="feature__text">Легко настраивается. И тут будет описание данного блока</div>
+                   </div>
+                    <div class="features__item">
+                     <img class="features__icon" src="img/features/feature-6.png" alt="">
+                     <h4 class="features__title">Бессплатная загрузка</h4>   
+                     <div class="feature__text">Легко настраивается. И тут будет описание данного блока</div>
+                   </div>
+                </div> <!-- /.features===================== -->
+            </div><!-- /.container ===================== -->
+            
+<!-- work не создаем контейнера=====-->
+          <div class="works" id="works">
+              <div class="works__item">
+                  <img class="works__photo" src="img/works/1.jpg" alt="">
+                  <div class="works__content">
+                      <div class="works__title">Название проэктного типа</div>
+                      <div class="works__text">works__text</div>
+                      
+                  </div>
+              </div>
+              <div class="works__item">
+                  <img class="works__photo" src="img/works/2.jpg" alt="">
+                  <div class="works__content">
+                      <div class="works__title">Название проэктного типа</div>
+                      <div class="works__text">works__text2</div>
+                      
+                  </div>
+              </div>
+              <div class="works__item">
+                  <img class="works__photo" src="img/works/3.jpg" alt="">
+                  <div class="works__content">
+                      <div class="works__title">Название проэктного типа</div>
+                      <div class="works__text">works__text3</div>
+                      
+                  </div>
+              </div>
+                 <div class="works__item">
+                  <img class="works__photo" src="img/works/4.jpg" alt="">
+                  <div class="works__content">
+                      <div class="works__title">Название проэктного типа</div>
+                      <div class="works__text">works__text4</div>
+                      
+                  </div>
+              </div>
+              <div class="works__item">
+                  <img class="works__photo" src="img/works/5.jpg" alt="">
+                  <div class="works__content">
+                      <div class="works__title">Название проэктного типа</div>
+                      <div class="works__text">works__text5</div>                      
+                  </div>
+              </div>
+              <div class="works__item">
+                  <img class="works__photo" src="img/works/6.jpg" alt="">
+                  <div class="works__content">
+                      <div class="works__title">Название проэктного типа</div>
+                      <div class="works__text">works__text6</div>                      
+                  </div>
+              </div>
+              <div class="works__item">
+                  <img class="works__photo" src="img/works/7.jpg" alt="">
+                  <div class="works__content">
+                      <div class="works__title">Название проэктного типа</div>
+                      <div class="works__text">works__text7</div>                      
+                  </div>
+              </div>
+              <div class="works__item">
+                  <img class="works__photo" src="img/works/8.jpg" alt="">
+                  <div class="works__content">
+                      <div class="works__title">Название проэктного типа</div>
+                      <div class="works__text">works__text8</div>                      
+                  </div>
+              </div>
+          </div><!-- /.works-->
+          
+<!-- team===============-->
+          <div class="team" id="team">
+              <div class="container">
+                  <div class="team__inner">
+                      <div class="team__item">
+                          <img class="team__photo" src="img/team/teams-1.jpg" alt="">
+                          <div class="team__name">Имя нашего участника 1</div>
+                          <div class="team__proff">Професия нашего человека</div>
+                          <div class="team__text"><p>Краткая информация об участнике</p><p>Краткая информация об участнике</p></div>
+                          
+                          <div class="social">
+                              <a class="social__item" href="#" target="_blank">
+                                  <svg class="social__icon">
+                                      <use xlink:href="#facebook"></use>
+                                  </svg>
+                              </a>
+                              <a class="social__item" href="#" target="_blank">
+                                  <svg class="social__icon">
+                                      <use xlink:href="#twitter"></use>
+                                  </svg>
+                              </a>
+                              <a class="social__item" href="#" target="_blank">
+                                  <svg class="social__icon">
+                                      <use xlink:href="#linkedin"></use>
+                                  </svg>
+                              </a>
+                          </div>
+                      
+                        </div>
+                        <div class="team__item">
+                          <img class="team__photo" src="img/team/teams-1.jpg" alt="">
+                          <div class="team__name">Имя нашего участника 2</div>
+                          <div class="team__proff">Професия нашего человека</div>
+                          <div class="team__text"><p>Краткая информация об участнике</p><p>Краткая информация об участнике</p></div>
+                           <div class="social">
+                              <a class="social__item" href="#" target="_blank">
+                                  <svg class="social__icon">
+                                      <use xlink:href="#facebook"></use>
+                                  </svg>
+                              </a>
+                              <a class="social__item" href="#" target="_blank">
+                                  <svg class="social__icon">
+                                      <use xlink:href="#twitter"></use>
+                                  </svg>
+                              </a>
+                              <a class="social__item" href="#" target="_blank">
+                                  <svg class="social__icon">
+                                      <use xlink:href="#linkedin"></use>
+                                  </svg>
+                              </a>
+                          </div>
+                        </div>
+                         <div class="team__item">
+                          <img class="team__photo" src="img/team/teams-1.jpg" alt="">
+                          <div class="team__name">Имя нашего участника 3</div>
+                          <div class="team__proff">Професия нашего человека</div>
+                          <div class="team__text"><p>Краткая информация об участнике</p><p>Краткая информация об участнике</p></div>
+                               <div class="social">
+                              <a class="social__item" href="#" target="_blank">
+                                  <svg class="social__icon">
+                                      <use xlink:href="#facebook"></use>
+                                  </svg>
+                              </a>
+                              <a class="social__item" href="#" target="_blank">
+                                  <svg class="social__icon">
+                                      <use xlink:href="#twitter"></use>
+                                  </svg>
+                              </a>
+                              <a class="social__item" href="#" target="_blank">
+                                  <svg class="social__icon">
+                                      <use xlink:href="#linkedin"></use>
+                                  </svg>
+                              </a>
+                          </div>
+                      </div>
+                        <div class="team__item">
+                          <img class="team__photo" src="img/team/teams-1.jpg" alt="">
+                          <div class="team__name">Имя нашего участника 4</div>
+                          <div class="team__proff">Професия нашего человека</div>
+                          <div class="team__text"><p>Краткая информация об участнике</p><p>Краткая информация об участнике</p>
+                          </div>
+                               <div class="social">
+                              <a class="social__item" href="#" target="_blank">
+                                  <svg class="social__icon">
+                                      <use xlink:href="#facebook"></use>
+                                  </svg>
+                              </a>
+                              <a class="social__item" href="#" target="_blank">
+                                  <svg class="social__icon">
+                                      <use xlink:href="#twitter"></use>
+                                  </svg>
+                              </a>
+                              <a class="social__item" href="#" target="_blank">
+                                  <svg class="social__icon">
+                                      <use xlink:href="#linkedin"></use>
+                                  </svg>
+                              </a>
+                          </div>
+                        </div>
+                  </div><!-- /.team__inner -->
+              </div><!-- /.contaner-->
+        
+          </div><!-- /.team -->
+<!-- reviews Отзывы===============-->
+<div class="reviews" id="reviews">
+    <div class="container">
+         
+          <div class="reviews__slider" id="reviewSlider">
+                <div class="slick-item">
+                   <div class="reviews__item">
+                     <div class="reviews__photo">
+                        <img class="reviews__img" src="img/reviews/review-1.jpg" alt="">
+                     </div>
+                     <div class="reviews__content">
+                        <div class="reviews__text">"Это Самый лучший отзыв на произвольную тему. Тут только позитивное и максимально интересное"</div>
+                        <div class="reviews__author">Тут имя именно того человека который Оставил отзыв</div>
+                     </div>
+                   </div>    
+
+                </div>
+                <div class="slick-item">
+                  <div class="reviews__item">
+                     <div class="reviews__photo">
+                        <img class="reviews__img" src="img/reviews/review-1.jpg" alt="">
+                     </div>
+                     <div class="reviews__content">
+                        <div class="reviews__text">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, similique, voluptas. Similique qui est laudantium nesciunt aut nisi iure quia id, quibusdam ipsum deleniti laborum unde quod natus, ipsa veritatis."</div>
+                        <div class="reviews__author">Тут имя именно того человека который Оставил отзыв</div>
+                    </div>
+                  </div> 
+                </div>    
+          </div>
+    </div><!--container -->
+</div><!--reviews -->
+   
+   
+<!--Download ========-->
+   <div class="download" id="download">
+       <div class="container">
+          <h3 class="download__title">Фрезерные изделия на ЧПУ станке из дерева</h3>
+          <div class="download__text">
+              <p>Использование ручных или механических инструментов для фрезеровки дерева давно в прошлом. Декоративные рисунки и орнаменты на детали наносятся с помощью специального оборудования. Изделия на фрезерном станке применяются в строительстве, мебельном или рекламном бизнесе.</p>    
+          </div>
+          <a class="btn  btn--long btn--red" href="#">Download Here</a>
+       </div>
+</div><!--   download-->
+
+<!-- Footer=====================-->
+   <footer class="footer">
+      <div class="container">
+          <div class="footer__inner">
+              <div class="footer__block">
+                  <h4 class="footer__title">Location</h4>
+                  <address class="footer__adddress">
+                      <div>г.Киев </div>
+                      <div>Ул.Гоголя </div>
+                  </address>
+                  
+              </div>
+              
+              <div class="footer__block">
+                  <h4 class="footer__title">Social link</h4>
+                  <div class="social social--footer">
+                              <a class="social__item" href="#" target="_blank">
+                                  <svg class="social__icon">
+                                      <use xlink:href="#facebook"></use>
+                                  </svg>
+                              </a>
+                              <a class="social__item" href="#" target="_blank">
+                                  <svg class="social__icon">
+                                      <use xlink:href="#twitter"></use>
+                                  </svg>
+                              </a>
+                              <a class="social__item" href="#" target="_blank">
+                                  <svg class="social__icon">
+                                      <use xlink:href="#linkedin"></use>
+                                  </svg>
+                              </a>
+                          </div>
+                  
+              </div>
+              
+              <div class="footer__block">
+                  <h4 class="footer__title">О Нас</h4>
+                  <div class="footer__text"><p>Использование ручных или механических инструментов для фрезеровки дерева давно в прошлом. Декоративные рисунки и орнаменты на детали наносятся с помощью специального оборудования. Изделия на фрезерном станке применяются в строительстве, мебельном или рекламном бизнесе.</p>
+                  </div>
+                  
+              </div>
+          </div><!-- /.footer__inner -->
+          
+      </div><!-- /.container -->
+    <div class="copyright">
+        <div class="container">
+                <div class="copyright__text">
+                    <div>Copyright 2021</div>
+                
+                    <div>
+                    Made with by <span>Andreii Kukoba</span>
+                    </div>
+                </div>
+        </div>
+    </div>    
+   </footer> <!--footer -->
+   
+   
+   
+   <!--JavaScript -->
+    <script src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="js/app.js"></script>
+   
+    </body>
+</html>

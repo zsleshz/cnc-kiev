@@ -1,0 +1,792 @@
+body {
+    margin: 0;
+    font-family: 'Raleway', sans-serif; 
+    font-size: 14px;/* размер шрифта*/
+    color: #000;/* цвет шрифта*/
+    -webkit-font-smoothing: antialiased;/*немного сглаживает шрифт*/
+    background-color: #fff;/*цвет фона */
+}
+*,
+:before,
+:after {
+    box-sizing: border-box;
+}
+/*==Условия для всех заголовков======*/
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}    
+
+/*=========container==========*/
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;/*прописываем чтобы наши элементы плотно не прилягали к границам экрана сделаем отступы(так как у нас адаптивный сайт) */
+}
+p{
+    margin: 0 0 10px;
+}
+/* ===========Header===================*/
+.header {
+    width: 100%;/* ширина шапки*/
+    height: 100px;/*высота шапки */
+    
+    position: absolute;/*элемент позиционируется относительно документа */
+    top: 0;/* позиционирование */
+    z-index: 1000;/*положение по оси Z */
+}
+.header__inner {
+    display: flex;
+    justify-content: space-between;/* задали значние для флекс айтемов. Они будут находиться слева и спарва*/
+    border-bottom: 1px solid #515369;/* прописали полосу серого цвета*/
+    padding: 18px 0;
+    align-items: center;/* выравнивает элемент по центру  */
+
+}
+/*стилидля созданного класа через условия JS*/
+.header.fixed{
+    height: auto;/*Автоматическая высота шапки*/
+    position:fixed;
+    background-color: #31344e;
+    
+}
+.header.fixed .header__inner{
+    padding-top: 7px;
+    padding-bottom: 7px;
+    
+    border-bottom: 0;
+}
+/* ===============Nav====================*/
+.nav {
+    display: flex;/*Задает тип элемента и позволяет менять поведение элемента в потоке*/
+    font-size: 14px;/*размер шрифта*/
+    font-weight: 700;
+    text-transform: uppercase;/*Задает верхний регистр для текста (все буквы заглавные)*/
+/*     margin: 10px 10px;отсуп чтобы не прилипала навигация*/
+}    
+.nav__link {
+   
+/*    padding: 10px;внутренний отступ для текста навигации*/
+    margin-left: 50px;
+    color: #fff;
+    text-decoration: none;/* подчеркивание текста нету */
+    opacity: 0.68;/*  прозрачность */
+    transition: .2s linear;/*  Плавный переход прозрачности */
+}
+.nav__link:first-child {
+    margin-left: 0;
+}
+.nav__link:hover { /* состояние при наводе мышкой на текст*/
+/*    text-decoration: underline;  подчеркивание текста есть */
+    opacity: 1;
+}
+
+/*  Intro
+===================================*/
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 750px;
+    padding-top: 100px;
+    
+    background: #31344e url("../img/intro-bg5.jpg") no-repeat center;
+    background-size: cover;/*правило в отдельном свойстве чтобы работало в разных браузерах*/
+}
+.intro__inner {
+   margin: 0 auto;
+   width: 100%;
+   max-width: 970px;
+   text-align: center;/* выравнивание текста по центру*/
+}
+
+.intro__title {
+    margin: 0 0 30px;
+    font-family: 'Open Sans' , sans-serif;
+    font-size: 65px;
+    line-height: 1.1;/*межстрочная ширина*/
+    color: #fff;
+    font-weight: 700;/*bold*/
+    text-transform: uppercase;/*Задает верхний регистр для текста (все буквы заглавные)*/
+    
+}
+.intro__subtitle{
+    font-size: 22px;
+    color: #ffffffb8;
+    line-height: 1.5;/*межстрочная ширина*/
+    font-weight: 400;/*Regular размер шрифта*/
+    text-align: left;
+    margin-bottom: 60px;
+    
+}
+/*==============bottom==============*/
+.btn{
+    padding: 14px 40px;
+    display: inline-block;
+    vertical-align: top;
+    
+    border-radius: 2px; /*скругление границ */
+    border: 0;/**убераем границы*/
+    cursor: pointer; /* изменение картинки курсора*/
+    font-family: 'Raleway', sans-serif;
+/*    font-family: inherit;наследовать шрифт у родителя*/
+    text-align: center;/*чтобы текст кнопки был по центру*/
+    
+    font-size: 13px;
+    color: aliceblue;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background .1s linear; /*плавный переход фона ..линейная функция*/
+    margin-bottom: 20px;/*добавил нижний отступ чтобы кнопки одна на одну не залазили*/
+    
+    
+}
+.btn2{
+    margin: 0 0 2px;
+    width: 300px;
+    height: 43px;
+    padding: 14px 40px;
+    display: inline-block;
+    vertical-align: top;
+    
+    border-radius: 2px; /*скругление границ */
+    border: 0;/**убераем границы*/
+    cursor: pointer; /* изменение картинки курсора*/
+    font-family: 'Raleway', sans-serif;
+/*    font-family: inherit;наследовать шрифт у родителя*/
+    
+    font-size: 13px;
+    color: aliceblue;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background .1s linear; /*плавный переход фона ..линейная функция*/
+    text-align: center;
+}
+.btn--red {
+    background-color: #e84545;
+    
+}
+.btn--red:hover{
+    background-color: #791f1f;
+   
+}
+.btn--long{/*создали новый модификатор для кнопки*/
+
+    min-width: 280px;
+}
+
+/*====== features =======*/
+.features {
+    display: flex;/* делаем флексовым чтобы легче расположить наши элементы*/
+    flex-wrap: wrap;/*мы разрешаем переносить наш элемент если он не помещаеться в блоке*/
+    margin: 95px 0;/* Отступы для нашего блока*/
+
+}
+.features__item {
+    padding: 0 30px;/*отступ всерху снизу 0, слева и справа 20px для наших элементов*/
+    width: 33.33333%;/*кажный айтем 1/3 блока*/
+    margin: 25px 0;/*отступ чтобы не прилипали картинки*/
+    text-align: center;
+    
+}
+.features__icon {
+    margin-bottom: 25px; /*отделили иконку от заголовка с помощью отступа*/
+    
+    
+}
+.features__title{
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #2d3033;
+    font-weight: 700;
+    text-transform: uppercase;/*Задает верхний регистр для текста (все буквы заглавные)*/
+    
+}
+.feature__text{/*создали стили текста чтобы они не зависили от боди*/
+    font-size: 14px;
+    line-height: 1.5;/*межстрочный интервал*/
+    color: #6c7279;
+}
+
+/*==works===================*/
+.works{
+        display: flex;
+        flex-wrap: wrap;/*чтобы эелементы которые не влазят в эту строку перескакивали на новую*/
+    }
+.works__item{
+    width: 25%;
+    height: 350px;
+    
+    border-bottom: 1px solid #fff;/*полоса посредине в один пиксель сплошной и белый*/
+    border-right: 1px solid #fff;/*полоса псправа от элемента в один пиксель сплошной и белый*/
+    position: relative;
+    overflow: hidden;/*скрываем все что вылезит за приделы картинки*/
+    
+}
+.works__item:hover .works__content{/*берем .works__content который нахоидться в.works__item при наводе */
+    opacity: 1;
+}
+.works__photo{
+    min-width:  100%;/*если  картинка меньше чем  ширина блока  то она все равно растягнится на 100% ширины блока*/
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    
+    transform: translate3d(-50%, -50%, 0)/*размешение по оси Х У Z*/
+}
+.works__content{
+    display: flex;
+    flex-direction: column;/*чтобы новый элнмент был на новой строке и занимал 100% ширины экрана*/
+    justify-content: center;/*выравниваем все по центру. По вертикали*/
+    width: 100%;
+    height: 100%;
+    
+    background-color: rgba(232,69,69, .9);
+    opacity: 0;
+    
+    text-align: center;/*тепер выровняли по центру. По горизонтали*/
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    
+    transition: opacity .2s linear;/*для опасити 0,2сек линейная функция== плавный переход*/
+}
+.works__title{
+    margin-bottom: 5px;
+    
+    font-size: 14px;
+    font-weight: 700;/*Болд*/
+    color: #fff;
+    text-transform: uppercase;
+    
+}
+.works__text{
+    font-size: 14px;
+    color: #fff;
+}
+/*====team=================*/
+
+.team{
+    margin:100px 0 70px; /*сверху 100 справа 0 снизу 70 слева 0 */
+}
+.team__inner{
+    display: flex;
+    flex-wrap: wrap;/*чтобы эелементы которые не влазят в эту строку перескакивали на новую*/
+    /*создадим отступы чтобы наши картинки сместились и начинались с начало нашего контейнера, сетки */
+    margin: 0 -15px;
+}
+.team__item{
+    width: 20%;
+    /*создаем отступы чтобы картинки не прилипали друг к другу*/
+    padding: 0 15px;
+    margin-bottom: 30px;/*создали отступ если вдруг появятся еще участники и чтобы между элементами был отступ*/
+}
+.team__photo{/*прописываем условия чтобы адаптироватаь под ранзые устройства*/
+    display: block;/**/
+    max-width: 100%;/*чтобы максимально занимало 100% ширины блокаю Тоесть она будет максимально равна ширины блока в котором находиться*/
+    height: auto;/*чтобы размеры прямо пропорционально изменялись*/
+    margin-bottom: 20px;
+}
+.team__name{
+    margin-bottom: 8px;   
+    
+    font-size: 22px;
+    color: #2d3033;
+     
+}
+.team__proff{
+    margin-bottom: 15px;
+    font-size: 13px;
+    color: #e84545;
+    text-transform: uppercase;/*Задает верхний регистр для текста (все буквы заглавные)*/
+        
+}
+
+.team__text{
+    margin-bottom: 20px;/*делаем отступ чтобы иконка не прилипала к тексту*/
+    
+    font-size: 14px;
+    color: #6c7279;
+    line-height: 1.5;/*межстрочный интервал 21px это 1,5 от 14px.*/
+    
+}
+/*====Social=================*/
+.social{
+    display: flex;
+}
+.social--footer{
+    justify-content: center;/*расположили иконки футера по центру*/
+}
+.social__item{
+    display: flex;
+    justify-content: center;/*распологаем картинку по центру своего контейнера*/
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    
+    margin-right: 4px;/*отступ спава чтобы отделить наши иконки друг от друга*/
+    border: 1px solid #e8ecee;/*создали рамку в 1пикс вокруг и цвет*/
+    transition: background .1s linear;/*для опасити 0,2сек линейная функция== плавный переход*/
+}
+.social__item:hover{
+    background-color: #e8ecee;
+}
+.social__item:hover .social__icon{/*при наводе на наж соц айтем мы хотим поработать с нашей иконкой*/
+    fill:#0043fa;
+}
+.social--footer .social__item{/*если сошл айтем находиться в блоке сошл футер*/
+    background-color: transparent;/*прозрачный*/
+    border-width: 2px;/*сделалил границы квадратика толще*/
+    border-color: #fff;/*цвет белый*/
+    border-radius: 2px;/*закруглили границы иконок края*/
+    
+}
+
+.social--footer 
+.social__item:hover {
+    background-color: #fff;/*при наводе заливка белым*/
+}
+
+.social__icon{/*создаем стиль для нашщего спрайта*/
+    display: block;
+    height: 18px;
+    fill: #c6cacc;/*задаем цвет заливки, но нужно учитивать чтобы иконки в теге path будет  другой цвет то тут мы не изменимю главный фал svg важнее*/
+    transition: fill .1s linear;
+}
+
+.social--footer .social__icon{ /*сошл айкон находиться в блоке сошл футер*/
+    fill: #fff;/*сделали иконик белыми*/
+    
+}
+
+/* Reviews=====отзывы===============*/
+.reviews{
+    overflow: hidden;/*скрывать что вылезает за приделы*/
+    background-color: #53354a;
+}
+
+.reviews__slider{
+   height: 500px;
+   overflow: hidden;/*скрывать что вылезает за приделы это чтобы при обновлении слайдер не прыгал*/
+}
+
+.reviews__slider.slick-initialized
+{
+    height: auto;
+}
+
+.reviews__item{
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.reviews__photo{
+    width: 50%;
+    height: 500px;
+    position: relative;
+}
+
+.reviews__img{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: 1;
+    
+    transform: translateY(-50%);
+}
+
+.reviews__content{
+    display: flex;
+    flex-direction: column;/* чтобы все эелементы нашего контента были с новой строки*/
+    justify-content: center;/*центруем весь наш контент*/
+    width: 50%;
+    padding-left: 80px;
+}
+
+.reviews__text{
+    margin-bottom: 20px;/*нижний отступ*/
+    font-family: 'Cardo', sans-serif;
+    font-style: italic;
+    font-size: 36px;
+    line-height: 1.2;
+    color: #fff;
+    
+}
+
+.reviews__author{
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.slick-dots{
+    display: flex;
+    justify-content: center;/*выравниваем все по центру */
+    
+    margin: 0;
+    padding: 0 0 10px;
+    list-style: none;
+    width: 50%;/*расположение по центру*/
+    
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.slick-dots button { 
+    background: #fff;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    padding: 0;
+    
+    border: 0;
+    opacity: .5;
+    cursor: pointer;/*чтобы появлялась ручка при клике*/
+    
+    
+    font-size:  0;/*скрываем текст кнопки*/
+    color: transparent;/*скрываем цвет*/
+}
+.slick-dots button:focus {/*при фокусе на кнорку мы убираем оутлайн*/
+  outline: 0;  
+}
+.slick-dots li {
+    margin: 0 5px;
+}
+.slick-dots .slick-active button {
+    opacity: 1;
+}
+/*download ==============*/
+.download{
+    margin: 90px 0;
+    
+    text-align: center;
+}
+.download__title{
+    margin-bottom: 10px;/*внешний отступ снизу*/
+    
+    font-size: 28px;
+    color: #2d3033;
+    font-weight: 300;
+}
+.download__text{
+    margin-bottom: 30px;/*внешний отступ по низу*/
+    font-size: 12px;
+    color: #2d3033;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+
+/*Footer=========*/
+.footer{
+    background-color: #3a3e64;
+}
+.footer__inner{
+    display: flex;
+    flex-wrap: wrap;/*мы разрешаем переносить наш элемент если он не помещаеться в блоке** сделанно это для адаптации*/
+    padding: 70px 0;
+    
+}
+.footer__block{
+    width: 33.33333%;
+    padding: 0 15px;
+    
+    text-align: center;
+}
+.footer__title{
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;/*все буквы большие*/
+    margin-bottom: 10px;  
+}
+.footer__adddress{
+    font-style: normal;/*стиль шрифра*/
+    font-size: 14px;
+    color: rgba(255, 255, 255, .5);/*задали цвет белый в РГБА и прозрачность 50% */
+    line-height: 1.5;/*межстрочный отступ*/
+}
+.footer__text{
+    font-size: 14px;
+    color: rgba(255, 255, 255, .5);/*задали цвет белый в РГБА и прозрачность 50% */
+    line-height: 1.5;/*межстрочный отступ*/
+}
+/*copyright=========*/
+.copyright {
+    padding: 20px 0;
+    background-color: #313454;
+}
+.copyright__text {
+    text-align: center;
+    font-size:14px;
+    color: #808080;
+    line-height: 1.5;
+}
+.copyright__text span{
+    color: #fff;
+    
+}
+
+/* burger ==================================*/  
+.burger{
+    display: none;
+    
+    background: none;
+    border: 0;
+    cursor: pointer;/*чтобы видеть куда кликаем*/
+    
+}
+.burger__item{
+    display: block;
+    width: 30px;
+    height: 3px;
+    
+    background-color: #fff;
+    
+    font-size: 0;/* толищина шрифта*/
+    color: transparent;/*делаем цвет текста прозрачным*/
+    
+    
+    position: relative;
+}
+.burger__item:before,
+.burger__item:after {
+    content: "";
+/*    width: 100%;*/
+    height: 100%;
+    
+    background-color: #fff;
+    
+    position: absolute;
+    right: 0;/*прижимаем к правому краю*/
+    z-index: 1;
+}
+.burger__item:before{
+    width: 30px;
+    top: -8px;/*поднимаем  чуть выше*/
+}
+.burger__item:after{
+    width: 30px;
+    bottom: -8px;/*опускаем чуть ниже*/
+    
+}
+    /* Media ==================================*/
+@media (max-width: 1300px){
+    /*==works===================*/
+    .works__item{
+        width: 50%;
+    }
+   
+}
+
+
+@media(max-width: 991px){
+    
+    /* nav ==================================*/    
+    .nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;/*каждая ссылка с новой строки*/
+        
+        background-color: #31344e;
+        text-align: right;/*прижимаем наш текст к правому краю*/
+        
+        position: absolute; /*позиция относительно нашей шапки*/
+        top: 100%;
+        right: 0;
+        
+    }
+    .nav.show { /*если навигация с классом шоу то мы делаеа*/
+        display: flex;
+    }
+    .nav__link {
+        padding: 9px 15px;
+    }
+    
+    /* burger ==================================*/  
+    .burger {
+        display: block;
+    }
+    
+    /* intro ==== ==============================*/  
+    .intro__title{
+        font-size: 40px;
+    }
+        
+    /* features ==================================*/  
+    .features__item {
+        width: 50%;
+    } 
+    /* Team ==================================*/ 
+    .team__item{
+        width: 50%;
+        
+        text-align: center;
+
+    }
+    .team__photo{
+        max-width: 250px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /* Team ==================================*/ 
+    .social{
+        justify-content: center;
+    }
+    /* reviews ==================================*/ 
+    .reviews__photo {
+        width: 100%;
+        overflow: hidden;/*прячим чсчатьс картинки чтобы не налазила на текст*/
+        margin: 15px 0 40px;
+    }
+    .reviews__content{
+        width: 100%;
+        padding-left: 0;
+        padding-bottom: 40px;
+    }
+/*    .reviews__img{*/
+/*        min-width: 991px;прописали размер картинки чтобы она заняла весь блок*/
+/*        right: -15px;*/
+/*    }*/
+    .reviews__text{
+        font-size: 25px;
+    }
+    /* download ==================================*/
+        .download {
+            margin: 40px 0;
+    }
+
+}
+@media(max-width: 767px){
+    .intro{
+        height: auto;
+        padding-top: 130px;
+        padding-bottom: 30px;
+    }
+    .intro__title{
+        font-size: 36px;
+        
+    }
+    .intro__subtitle{
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+    .btn2{
+      width: 265px;
+    }
+    
+    /* features ==================================*/  
+    .features{
+        margin: 30px;
+    }
+    .features__item {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    } 
+    /*==works===================*/
+    .works__item{
+        width: 100%;
+        height: 300px;
+    }
+     /* Team ==================================*/ 
+    .team{
+        margin: 60px 0 30px;
+    }
+    .team__item{
+        width: 100%;
+        
+        text-align: center;
+
+    }
+    .team__photo{
+/*        max-width: 250px;*/
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /* Footer ==================================*/ 
+    .footer__block {
+        width: 100%;
+        margin-bottom: 30px;/*отступы межды блоками*/
+    }
+    .footer__block:last-child{/*задаем стить последнему блоку*/
+        margin-bottom: 0;/*нижний отступ*/
+    }
+    .footer__inner{
+        padding: 30px 0;
+    }
+    
+}
+    
+
+@media (max-width: 320px){
+    /* btn ==================================*/ 
+    .btn2 {
+    width: 187px;
+    }
+    .btn{
+        padding: 10px 14px;
+    }
+   .btn--long {
+    min-width: 125px;
+    }
+    /* download ==================================*/ 
+    .download {
+    margin: 25px 0;
+    }
+    .download__title{
+        font-size: 25px;
+    }
+    .download__text{
+        font-size: 12px;
+    }
+    /* Reviews ==================================*/ 
+    .reviews__img{
+        right: -120px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
